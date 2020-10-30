@@ -27,3 +27,8 @@ hs_err_pid*
 /common/common-base-service/module_common-base-service.xml
 /common/common-core-utils/module_common-core-utils.xml
 /shop-core/module_shop-core.xml
+common/common-api/user-auth-api/target/
+common/common-core-utils/target/
+shop-core/target/
+user-auth/target/
+common/common-base-service/target/
