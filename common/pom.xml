@@ -15,6 +15,7 @@
     <modules>
         <module>common-api</module>
         <module>common-base-service</module>
+        <module>common-core-utils</module>
     </modules>
 
 

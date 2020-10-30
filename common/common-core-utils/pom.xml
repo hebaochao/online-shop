@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common-base-service</artifactId>
+    <artifactId>common-core-utils</artifactId>
 
 
 </project>
