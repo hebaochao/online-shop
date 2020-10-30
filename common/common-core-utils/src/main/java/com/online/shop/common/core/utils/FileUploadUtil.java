@@ -3,11 +3,12 @@ package com.online.shop.common.core.utils;
 import java.io.File;
 import java.util.*;
 import org.apache.commons.fileupload.*;
-import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Pattern;
 import java.io.IOException;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Matcher;
 
 
@@ -59,9 +60,8 @@ public class FileUploadUtil {
     /** �ļ�����
      * @return true ���� success; false ���� fail.
      */
-    public boolean Upload(){
+    public boolean upload(){
         DiskFileItemFactory factory = new DiskFileItemFactory();
-
         try {
 
             //���û���ϴ�Ŀ��Ŀ¼���򴴽���
@@ -71,16 +71,7 @@ public class FileUploadUtil {
             }*/
             //���û����ʱĿ¼���򴴽���
             FileUtil.makeDirectory(tempPath+"/ddd");
-            /*if (!FileUtil.makeDirectory(tempPath+"/ddd")) {
-                throw new IOException("Create Temp Directory Error.");
-            }*/
 
-            //�ϴ���ĿֻҪ�㹻С����Ӧ�ñ������ڴ��
-            //�ϴ����ĿӦ�ñ�д��Ӳ�̵���ʱ�ļ��ϡ�
-            //�ǳ�����ϴ�����Ӧ�ñ��⡣
-            //������Ŀ���ڴ�����ռ�Ŀռ䣬���������ϴ����󣬲����趨��ʱ�ļ���λ�á�
-
-            //�������ֻ�������ڴ��д洢������,��λ:�ֽ�
             factory.setSizeThreshold(sizeThreshold);
             // the location for saving data that is larger than getSizeThreshold()
             factory.setRepository(new File(tempPath));
@@ -104,14 +95,15 @@ public class FileUploadUtil {
             while (iter.hasNext()) {
                 System.out.println("++00++====="+newFileName);
                 FileItem item = (FileItem) iter.next();
-                //�������������ļ�������б���Ϣ
                 if (!item.isFormField()) {
                     String name = item.getName();
-                    System.out.println("++++====="+name);
+//                    System.out.println("++++====="+name);
                     long size = item.getSize();
                     //�ж���ļ���ʱ��ֻ�ϴ����ļ���
-                    if ((name == null || name.equals("")) && size == 0)
+                    if ((name == null || name.equals("")) && size == 0){
                         continue;
+                    }
+
                     Matcher m = p.matcher(name);
                     boolean result = m.find();
                     if (result) {

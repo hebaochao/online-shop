@@ -22,3 +22,8 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 *.iml
+/common/module_common.xml
+/common/common-api/module_common-api.xml
+/common/common-base-service/module_common-base-service.xml
+/common/common-core-utils/module_common-core-utils.xml
+/shop-core/module_shop-core.xml
